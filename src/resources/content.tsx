@@ -3,6 +3,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 import metadata from "./metadata.json";
 import { defaultLocale, isLocale, Locale } from "@/i18n/locales";
 import { getLocalizedMetadata } from "./locales";
+import { features } from "./features";
 
 function createContent(locale: string = defaultLocale) {
   const localized = getLocalizedMetadata(locale);
@@ -19,7 +20,7 @@ function createContent(locale: string = defaultLocale) {
   };
 
   const newsletter: Newsletter = {
-  display: true,
+  display: features.newsletter,
   title: <>{localized.newsletter.title}</>,
   description: <>{localized.newsletter.description}</>,
   };

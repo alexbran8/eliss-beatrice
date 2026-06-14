@@ -13,6 +13,7 @@ export {
 } from "./content";
 
 export { default as metadata } from "./metadata.json";
+export { features } from "./features";
 export {
   paintings,
   formatPaintingDimensions,
