@@ -1,21 +1,22 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
+import metadata from "./metadata.json";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: metadata.artist.firstName,
+  lastName: metadata.artist.lastName,
+  name: metadata.artist.name,
+  role: metadata.artist.role,
+  avatar: metadata.artist.avatar,
+  email: metadata.artist.email,
+  location: metadata.artist.location as Person["location"], // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: metadata.artist.languages, // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>{metadata.newsletter.title}</>,
+  description: <>{metadata.newsletter.description}</>,
 };
 
 const social: Social = [
@@ -56,11 +57,11 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  image: metadata.site.image,
+  label: metadata.pages.home.label,
+  title: metadata.site.title,
+  description: metadata.site.description,
+  headline: <>{metadata.pages.home.headline}</>,
   featured: {
     display: true,
     title: (
@@ -74,18 +75,14 @@ const home: Home = {
     ),
     href: "/work/building-once-ui-a-customizable-design-system",
   },
-  subline: (
-    <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
-  ),
+  subline: <>{metadata.pages.home.subline}</>,
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: metadata.pages.about.label,
+  title: metadata.pages.about.title,
+  description: metadata.pages.about.description,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -100,13 +97,7 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: (
-      <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
-      </>
-    ),
+    description: <>{metadata.pages.about.intro}</>,
   },
   work: {
     display: true, // set to false to hide this section
@@ -234,27 +225,27 @@ const about: About = {
 
 const blog: Blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  label: metadata.pages.blog.label,
+  title: metadata.pages.blog.title,
+  description: metadata.pages.blog.description,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: metadata.pages.work.label,
+  title: metadata.pages.work.title,
+  description: metadata.pages.work.description,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  label: metadata.pages.gallery.label,
+  title: metadata.pages.gallery.title,
+  description: metadata.pages.gallery.description,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [

@@ -10,6 +10,8 @@ export {
   gallery,
 } from "./content";
 
+export { default as metadata } from "./metadata.json";
+
 export {
   display,
   mailchimp,
