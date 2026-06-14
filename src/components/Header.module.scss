@@ -12,6 +12,9 @@
     .position {
         top: auto;
         bottom: var(--static-space-24);
+        left: 50%;
+        width: 90vw;
+        transform: translateX(-50%);
     }
 
     .mask {
