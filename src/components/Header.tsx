@@ -1,11 +1,14 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, getContent } from "@/resources";
+import { locales, Locale } from "@/i18n/locales";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -44,6 +47,14 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const router = useRouter();
+  const currentLocale = useLocale() as Locale;
+  const { person, about, blog, work, gallery } = getContent(currentLocale);
+
+  const switchLocale = (locale: Locale) => {
+    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; samesite=lax`;
+    router.refresh();
+  };
 
   return (
     <>
@@ -86,9 +97,7 @@ export const Header = () => {
             zIndex={1}
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
-              {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
-              )}
+              {routes["/"] && <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
                 <>
@@ -166,6 +175,16 @@ export const Header = () => {
                   </Row>
                 </>
               )}
+              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              {locales.map((locale) => (
+                <ToggleButton
+                  key={locale}
+                  type="button"
+                  onClick={() => switchLocale(locale)}
+                  label={locale.toUpperCase()}
+                  selected={currentLocale === locale}
+                />
+              ))}
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />

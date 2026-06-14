@@ -1,0 +1,45 @@
+{
+  "site": {
+    "title": "Portafolio de Eliss Beatrice",
+    "description": "Sitio web de portafolio que presenta mi trabajo como artista"
+  },
+  "pages": {
+    "home": {
+      "label": "Inicio",
+      "headline": "Construyendo mundos expresivos a través del arte",
+      "subline": "Soy Eliss Beatrice, una artista que explora imagen, emoción y atmósfera a través de la narrativa visual."
+    },
+    "about": {
+      "label": "Acerca de",
+      "title": "Acerca de - Eliss Beatrice",
+      "description": "Conoce a Eliss Beatrice, artista basada en Europe/Madrid",
+      "intro": "Eliss Beatrice es una artista apasionada por transformar emoción, memoria y atmósfera en obra visual expresiva. Su práctica explora el espacio entre la narración íntima y una imagen cuidadosamente construida."
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Escribiendo sobre arte y proceso...",
+      "description": "Lee en qué ha estado trabajando Eliss Beatrice recientemente"
+    },
+    "work": {
+      "label": "Obra",
+      "title": "Proyectos - Eliss Beatrice",
+      "description": "Proyectos artísticos de Eliss Beatrice"
+    },
+    "gallery": {
+      "label": "Galería",
+      "title": "Galería - Eliss Beatrice",
+      "description": "Una colección visual de Eliss Beatrice"
+    }
+  },
+  "newsletter": {
+    "title": "Suscríbete al newsletter de Eliss Beatrice",
+    "description": "Notas sobre arte, proceso y obra nueva"
+  },
+  "footer": {
+    "attribution": "Crea tu portafolio con"
+  },
+  "forms": {
+    "email": "Correo electrónico",
+    "invalidEmail": "Introduce un correo electrónico válido."
+  }
+}

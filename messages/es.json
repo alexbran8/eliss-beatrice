@@ -1,0 +1,10 @@
+{
+  "Mailchimp": {
+    "email": "Correo electrónico",
+    "invalidEmail": "Introduce un correo electrónico válido."
+  },
+  "LocaleSwitcher": {
+    "en": "Inglés",
+    "es": "Español"
+  }
+}

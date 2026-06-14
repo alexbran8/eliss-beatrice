@@ -14,13 +14,14 @@ import {
   Media,
   Line,
 } from "@once-ui-system/core";
-import { baseURL, about, blog, person } from "@/resources";
+import { baseURL, getContent } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from "next";
 import React from "react";
 import { Posts } from "@/components/blog/Posts";
 import { ShareSection } from "@/components/blog/ShareSection";
+import { getLocale } from "next-intl/server";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "blog", "posts"]);
@@ -44,6 +45,8 @@ export async function generateMetadata({
 
   if (!post) return {};
 
+  const { blog } = getContent(await getLocale());
+
   return Meta.generate({
     title: post.metadata.title,
     description: post.metadata.summary,
@@ -54,6 +57,8 @@ export async function generateMetadata({
 }
 
 export default async function Blog({ params }: { params: Promise<{ slug: string | string[] }> }) {
+  const { about, blog, person } = getContent(await getLocale());
+
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/")
@@ -95,7 +100,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           />
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
             <SmartLink href="/blog">
-              <Text variant="label-strong-m">Blog</Text>
+              <Text variant="label-strong-m">{blog.label}</Text>
             </SmartLink>
             <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
               {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}

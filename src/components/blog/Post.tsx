@@ -2,7 +2,8 @@
 
 import { Card, Column, Media, Row, Avatar, Text } from "@once-ui-system/core";
 import { formatDate } from "@/utils/formatDate";
-import { person } from "@/resources";
+import { getContent } from "@/resources";
+import { useLocale } from "next-intl";
 
 interface PostProps {
   post: any;
@@ -11,6 +12,9 @@ interface PostProps {
 }
 
 export default function Post({ post, thumbnail, direction }: PostProps) {
+  const locale = useLocale();
+  const { person } = getContent(locale);
+
   return (
     <Card
       fillWidth

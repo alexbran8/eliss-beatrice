@@ -1,8 +1,9 @@
 "use client";
 
-import { mailchimp, newsletter } from "@/resources";
+import { getContent, mailchimp } from "@/resources";
 import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
@@ -14,6 +15,9 @@ function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T
 }
 
 export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
+  const locale = useLocale();
+  const t = useTranslations("Mailchimp");
+  const { newsletter } = getContent(locale);
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
@@ -32,7 +36,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
     setEmail(value);
 
     if (!validateEmail(value)) {
-      setError("Please enter a valid email address.");
+      setError(t("invalidEmail"));
     } else {
       setError("");
     }
@@ -43,7 +47,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const handleBlur = () => {
     setTouched(true);
     if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
+      setError(t("invalidEmail"));
     }
   };
 
@@ -135,7 +139,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
             id="mce-EMAIL"
             name="EMAIL"
             type="email"
-            placeholder="Email"
+            placeholder={t("email")}
             required
             onChange={(e) => {
               if (error) {

@@ -3,6 +3,8 @@ import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
 
 import classNames from "classnames";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 
 import {
   Background,
@@ -14,9 +16,11 @@ import {
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+import { baseURL, effects, fonts, style, dataStyle, getContent } from "@/resources";
 
 export async function generateMetadata() {
+  const { home } = getContent(await getLocale());
+
   return Meta.generate({
     title: home.title,
     description: home.description,
@@ -31,11 +35,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
     <Flex
       suppressHydrationWarning
       as="html"
-      lang="en"
+      lang={locale}
       fillWidth
       className={classNames(
         fonts.heading.variable,
@@ -103,6 +109,7 @@ export default async function RootLayout({
           }}
         />
       </head>
+      <NextIntlClientProvider>
       <Providers>
         <Column
           as="body"
@@ -165,6 +172,7 @@ export default async function RootLayout({
           <Footer />
         </Column>
       </Providers>
+      </NextIntlClientProvider>
     </Flex>
   );
 }

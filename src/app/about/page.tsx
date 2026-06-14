@@ -12,12 +12,15 @@ import {
   Schema,
   Row,
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, getContent } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import { getLocale } from "next-intl/server";
 
 export async function generateMetadata() {
+  const { about } = getContent(await getLocale());
+
   return Meta.generate({
     title: about.title,
     description: about.description,
@@ -27,7 +30,9 @@ export async function generateMetadata() {
   });
 }
 
-export default function About() {
+export default async function About() {
+  const { about, person, social } = getContent(await getLocale());
+
   const structure = [
     {
       title: about.intro.title,

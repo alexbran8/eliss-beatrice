@@ -1,8 +1,13 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 import metadata from "./metadata.json";
+import { defaultLocale, isLocale, Locale } from "@/i18n/locales";
+import { getLocalizedMetadata } from "./locales";
 
-const person: Person = {
+function createContent(locale: string = defaultLocale) {
+  const localized = getLocalizedMetadata(locale);
+
+  const person: Person = {
   firstName: metadata.artist.firstName,
   lastName: metadata.artist.lastName,
   name: metadata.artist.name,
@@ -11,15 +16,15 @@ const person: Person = {
   email: metadata.artist.email,
   location: metadata.artist.location as Person["location"], // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: metadata.artist.languages, // optional: Leave the array empty if you don't want to display languages
-};
+  };
 
-const newsletter: Newsletter = {
+  const newsletter: Newsletter = {
   display: true,
-  title: <>{metadata.newsletter.title}</>,
-  description: <>{metadata.newsletter.description}</>,
-};
+  title: <>{localized.newsletter.title}</>,
+  description: <>{localized.newsletter.description}</>,
+  };
 
-const social: Social = [
+  const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
@@ -53,15 +58,15 @@ const social: Social = [
     link: `mailto:${person.email}`,
     essential: true,
   },
-];
+  ];
 
-const home: Home = {
+  const home: Home = {
   path: "/",
   image: metadata.site.image,
-  label: metadata.pages.home.label,
-  title: metadata.site.title,
-  description: metadata.site.description,
-  headline: <>{metadata.pages.home.headline}</>,
+  label: localized.pages.home.label,
+  title: localized.site.title,
+  description: localized.site.description,
+  headline: <>{localized.pages.home.headline}</>,
   featured: {
     display: true,
     title: (
@@ -75,14 +80,14 @@ const home: Home = {
     ),
     href: "/work/building-once-ui-a-customizable-design-system",
   },
-  subline: <>{metadata.pages.home.subline}</>,
-};
+  subline: <>{localized.pages.home.subline}</>,
+  };
 
-const about: About = {
+  const about: About = {
   path: "/about",
-  label: metadata.pages.about.label,
-  title: metadata.pages.about.title,
-  description: metadata.pages.about.description,
+  label: localized.pages.about.label,
+  title: localized.pages.about.title,
+  description: localized.pages.about.description,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -97,7 +102,7 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: <>{metadata.pages.about.intro}</>,
+    description: <>{localized.pages.about.intro}</>,
   },
   work: {
     display: true, // set to false to hide this section
@@ -221,31 +226,31 @@ const about: About = {
       },
     ],
   },
-};
+  };
 
-const blog: Blog = {
+  const blog: Blog = {
   path: "/blog",
-  label: metadata.pages.blog.label,
-  title: metadata.pages.blog.title,
-  description: metadata.pages.blog.description,
+  label: localized.pages.blog.label,
+  title: localized.pages.blog.title,
+  description: localized.pages.blog.description,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
-};
+  };
 
-const work: Work = {
+  const work: Work = {
   path: "/work",
-  label: metadata.pages.work.label,
-  title: metadata.pages.work.title,
-  description: metadata.pages.work.description,
+  label: localized.pages.work.label,
+  title: localized.pages.work.title,
+  description: localized.pages.work.description,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
-};
+  };
 
-const gallery: Gallery = {
+  const gallery: Gallery = {
   path: "/gallery",
-  label: metadata.pages.gallery.label,
-  title: metadata.pages.gallery.title,
-  description: metadata.pages.gallery.description,
+  label: localized.pages.gallery.label,
+  title: localized.pages.gallery.title,
+  description: localized.pages.gallery.description,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
@@ -290,6 +295,22 @@ const gallery: Gallery = {
       orientation: "vertical",
     },
   ],
-};
+  };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+  return {
+    locale: (isLocale(locale) ? locale : defaultLocale) as Locale,
+    localized,
+    person,
+    social,
+    newsletter,
+    home,
+    about,
+    blog,
+    work,
+    gallery,
+  };
+}
+
+const { person, social, newsletter, home, about, blog, work, gallery } = createContent();
+
+export { createContent as getContent, getLocalizedMetadata, person, social, newsletter, home, about, blog, work, gallery };

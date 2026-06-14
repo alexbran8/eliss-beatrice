@@ -1,0 +1,45 @@
+{
+  "site": {
+    "title": "Eliss Beatrice's Portfolio",
+    "description": "Portfolio website showcasing my work as an artist"
+  },
+  "pages": {
+    "home": {
+      "label": "Home",
+      "headline": "Building expressive worlds through art",
+      "subline": "I'm Eliss Beatrice, an artist exploring image, emotion, and atmosphere through visual storytelling."
+    },
+    "about": {
+      "label": "About",
+      "title": "About - Eliss Beatrice",
+      "description": "Meet Eliss Beatrice, artist based in Europe/Madrid",
+      "intro": "Eliss Beatrice is an artist with a passion for transforming emotion, memory, and atmosphere into expressive visual work. Her practice explores the space between intimate storytelling and carefully crafted image-making."
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Writing about art and process...",
+      "description": "Read what Eliss Beatrice has been up to recently"
+    },
+    "work": {
+      "label": "Work",
+      "title": "Projects - Eliss Beatrice",
+      "description": "Art projects by Eliss Beatrice"
+    },
+    "gallery": {
+      "label": "Gallery",
+      "title": "Gallery - Eliss Beatrice",
+      "description": "A visual collection by Eliss Beatrice"
+    }
+  },
+  "newsletter": {
+    "title": "Subscribe to Eliss Beatrice's Newsletter",
+    "description": "Notes on art, process, and new work"
+  },
+  "footer": {
+    "attribution": "Build your portfolio with"
+  },
+  "forms": {
+    "email": "Email",
+    "invalidEmail": "Please enter a valid email address."
+  }
+}

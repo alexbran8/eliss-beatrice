@@ -1,8 +1,11 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { baseURL, getContent } from "@/resources";
 import { Projects } from "@/components/work/Projects";
+import { getLocale } from "next-intl/server";
 
 export async function generateMetadata() {
+  const { work } = getContent(await getLocale());
+
   return Meta.generate({
     title: work.title,
     description: work.description,
@@ -12,7 +15,9 @@ export async function generateMetadata() {
   });
 }
 
-export default function Work() {
+export default async function Work() {
+  const { about, person, work } = getContent(await getLocale());
+
   return (
     <Column maxWidth="m" paddingTop="24">
       <Schema

@@ -12,6 +12,7 @@ import {
   StyleConfig,
 } from "@/types";
 import metadata from "./metadata.json";
+import en from "./locales/en.json";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = metadata.site.url;
@@ -189,7 +190,7 @@ const schema: SchemaConfig = {
   logo: "",
   type: "Person",
   name: metadata.artist.name,
-  description: metadata.site.description,
+  description: en.site.description,
   email: metadata.artist.email,
 };
 

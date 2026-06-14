@@ -8,6 +8,8 @@ export {
   blog,
   work,
   gallery,
+  getContent,
+  getLocalizedMetadata,
 } from "./content";
 
 export { default as metadata } from "./metadata.json";
