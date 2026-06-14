@@ -22,8 +22,8 @@
     },
     "work": {
       "label": "Obra",
-      "title": "Proyectos - Eliss Beatrice",
-      "description": "Proyectos artísticos de Eliss Beatrice"
+      "title": "Pinturas - Eliss Beatrice",
+      "description": "Pinturas originales de Eliss Beatrice, con materiales, paletas, dimensiones y disponibilidad"
     },
     "gallery": {
       "label": "Galería",
@@ -34,6 +34,18 @@
   "newsletter": {
     "title": "Suscríbete al newsletter de Eliss Beatrice",
     "description": "Notas sobre arte, proceso y obra nueva"
+  },
+  "paintings": {
+    "dimensions": "Dimensiones",
+    "materials": "Materiales",
+    "colours": "Colores",
+    "surface": "Soporte",
+    "status": {
+      "available": "Disponible",
+      "reserved": "Reservada",
+      "sold": "Vendida",
+      "not-for-sale": "No disponible"
+    }
   },
   "footer": {
     "attribution": "Crea tu portafolio con"

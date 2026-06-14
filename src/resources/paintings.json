@@ -1,0 +1,207 @@
+[
+  {
+    "id": "ptg-001",
+    "slug": "after-the-rain",
+    "title": {
+      "en": "After the Rain",
+      "es": "Despues de la lluvia"
+    },
+    "description": {
+      "en": "A layered atmospheric piece built around soft movement, residual light, and the feeling of a room after weather has passed.",
+      "es": "Una pieza atmosferica por capas construida alrededor del movimiento suave, la luz residual y la sensacion de una habitacion despues de la lluvia."
+    },
+    "year": 2025,
+    "series": "Atmospheres",
+    "images": [
+      "/images/projects/project-01/cover-01.jpg",
+      "/images/projects/project-01/image-01.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Misty blue",
+        "hex": "#8EA7B7"
+      },
+      {
+        "name": "Warm ivory",
+        "hex": "#E7DFCF"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#3E4244"
+      }
+    ],
+    "materials": ["Acrylic paint", "Oil pastel", "Graphite", "Cotton canvas"],
+    "surface": "Stretched canvas",
+    "dimensions": {
+      "height": 90,
+      "width": 70,
+      "depth": 3,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": false,
+    "signed": true,
+    "status": "available",
+    "price": {
+      "amount": 1200,
+      "currency": "EUR"
+    },
+    "availabilityNote": {
+      "en": "Available for studio pickup or insured shipping.",
+      "es": "Disponible para recogida en estudio o envio asegurado."
+    },
+    "tags": ["atmospheric", "blue", "mixed media", "canvas"]
+  },
+  {
+    "id": "ptg-002",
+    "slug": "red-memory",
+    "title": {
+      "en": "Red Memory",
+      "es": "Memoria roja"
+    },
+    "description": {
+      "en": "A compact study of heat, gesture, and contrast, using saturated reds against quiet neutral passages.",
+      "es": "Un estudio compacto de calor, gesto y contraste, con rojos saturados frente a pasajes neutros y silenciosos."
+    },
+    "year": 2025,
+    "series": "Small Fires",
+    "images": [
+      "/images/projects/project-01/cover-02.jpg",
+      "/images/projects/project-01/image-02.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Cadmium red",
+        "hex": "#C43B2D"
+      },
+      {
+        "name": "Soft black",
+        "hex": "#242221"
+      },
+      {
+        "name": "Blush",
+        "hex": "#D7A29A"
+      }
+    ],
+    "materials": ["Oil paint", "Cold wax", "Linen panel"],
+    "surface": "Linen panel",
+    "dimensions": {
+      "height": 50,
+      "width": 40,
+      "depth": 2,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": true,
+    "signed": true,
+    "status": "reserved",
+    "price": {
+      "amount": 680,
+      "currency": "EUR"
+    },
+    "availabilityNote": {
+      "en": "Currently reserved pending collector confirmation.",
+      "es": "Reservada temporalmente a la espera de confirmacion del coleccionista."
+    },
+    "tags": ["red", "oil", "gesture", "linen"]
+  },
+  {
+    "id": "ptg-003",
+    "slug": "quiet-garden",
+    "title": {
+      "en": "Quiet Garden",
+      "es": "Jardin silencioso"
+    },
+    "description": {
+      "en": "A botanical abstraction focused on slow greens, translucent marks, and the rhythm of leaves in shade.",
+      "es": "Una abstraccion botanica centrada en verdes lentos, marcas translucidas y el ritmo de las hojas en sombra."
+    },
+    "year": 2024,
+    "series": "Garden Studies",
+    "images": [
+      "/images/projects/project-01/cover-03.jpg",
+      "/images/projects/project-01/image-03.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Olive green",
+        "hex": "#6F7650"
+      },
+      {
+        "name": "Sage",
+        "hex": "#A8B39B"
+      },
+      {
+        "name": "Pale ochre",
+        "hex": "#D6C28C"
+      }
+    ],
+    "materials": ["Watercolour", "Ink", "Coloured pencil", "Archival cotton paper"],
+    "surface": "300 gsm archival paper",
+    "dimensions": {
+      "height": 42,
+      "width": 59.4,
+      "unit": "cm"
+    },
+    "orientation": "landscape",
+    "framed": false,
+    "signed": true,
+    "status": "available",
+    "price": {
+      "amount": 420,
+      "currency": "EUR"
+    },
+    "availabilityNote": {
+      "en": "Ships flat in archival packaging.",
+      "es": "Se envia en plano con embalaje de conservacion."
+    },
+    "tags": ["botanical", "green", "paper", "watercolour"]
+  },
+  {
+    "id": "ptg-004",
+    "slug": "night-window",
+    "title": {
+      "en": "Night Window",
+      "es": "Ventana nocturna"
+    },
+    "description": {
+      "en": "A darker interior scene with luminous edges, built from scraped acrylic layers and dry pigment.",
+      "es": "Una escena interior oscura con bordes luminosos, construida con capas de acrilico raspado y pigmento seco."
+    },
+    "year": 2024,
+    "series": "Interiors",
+    "images": ["/images/projects/project-01/cover-04.jpg"],
+    "dominantColours": [
+      {
+        "name": "Midnight blue",
+        "hex": "#1F2A44"
+      },
+      {
+        "name": "Muted violet",
+        "hex": "#6C5A7D"
+      },
+      {
+        "name": "Candle yellow",
+        "hex": "#F0C86A"
+      }
+    ],
+    "materials": ["Acrylic paint", "Dry pigment", "Charcoal", "Wood panel"],
+    "surface": "Cradled wood panel",
+    "dimensions": {
+      "height": 80,
+      "width": 80,
+      "depth": 4,
+      "unit": "cm"
+    },
+    "orientation": "square",
+    "framed": false,
+    "signed": true,
+    "status": "sold",
+    "price": null,
+    "availabilityNote": {
+      "en": "Sold. Similar commissions can be discussed.",
+      "es": "Vendida. Se pueden consultar encargos similares."
+    },
+    "tags": ["interior", "night", "panel", "dark"]
+  }
+]

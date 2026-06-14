@@ -22,8 +22,8 @@
     },
     "work": {
       "label": "Work",
-      "title": "Projects - Eliss Beatrice",
-      "description": "Art projects by Eliss Beatrice"
+      "title": "Paintings - Eliss Beatrice",
+      "description": "Original paintings by Eliss Beatrice, including materials, palettes, dimensions, and availability"
     },
     "gallery": {
       "label": "Gallery",
@@ -34,6 +34,18 @@
   "newsletter": {
     "title": "Subscribe to Eliss Beatrice's Newsletter",
     "description": "Notes on art, process, and new work"
+  },
+  "paintings": {
+    "dimensions": "Dimensions",
+    "materials": "Materials",
+    "colours": "Colours",
+    "surface": "Surface",
+    "status": {
+      "available": "Available",
+      "reserved": "Reserved",
+      "sold": "Sold",
+      "not-for-sale": "Not for sale"
+    }
   },
   "footer": {
     "attribution": "Build your portfolio with"

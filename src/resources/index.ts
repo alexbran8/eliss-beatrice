@@ -13,6 +13,14 @@ export {
 } from "./content";
 
 export { default as metadata } from "./metadata.json";
+export {
+  paintings,
+  formatPaintingDimensions,
+  formatPaintingPrice,
+  getPaintingAvailabilityNote,
+  getPaintingDescription,
+  getPaintingTitle,
+} from "./paintings";
 
 export {
   display,

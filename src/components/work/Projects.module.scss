@@ -1,17 +1,53 @@
-.hover {
-    transition: var(--transition-micro-medium);
+@use "../breakpoints.scss" as breakpoints;
 
-    &:hover {
-        transform: translateX(var(--static-space-8));
+.card {
+    min-height: 100%;
+    outline: none;
+    transition:
+        transform var(--transition-micro-medium),
+        border-color var(--transition-micro-medium),
+        box-shadow var(--transition-micro-medium);
 
-        .indicator {
-            transform: rotate(0);
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+        transform: translateY(calc(-1 * var(--static-space-4)));
+        border-color: var(--neutral-alpha-medium);
+        box-shadow: var(--shadow-l);
+
+        .image {
+            filter: saturate(0.95) brightness(0.9);
         }
     }
 }
 
-.indicator {
-    transform: rotate(-90deg);
-    left: -2rem;
-    transition: var(--transition-micro-medium);
+.image {
+    transition: filter var(--transition-micro-medium);
+}
+
+.titleBar {
+    background: var(--surface-background);
+}
+
+.details {
+    padding-top: var(--static-space-4);
+    padding-bottom: var(--static-space-20);
+}
+
+.swatch {
+    width: var(--static-space-20);
+    height: var(--static-space-20);
+    border-radius: 999px;
+    border: 1px solid var(--neutral-alpha-medium);
+    box-shadow: inset 0 0 0 1px var(--static-transparent);
+}
+
+@media (max-width: breakpoints.$s) {
+    .card {
+        &:hover,
+        &:focus-visible,
+        &:focus-within {
+            transform: none;
+        }
+    }
 }
