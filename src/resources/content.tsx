@@ -240,12 +240,12 @@ function createContent(locale: string = defaultLocale) {
   };
 
   const work: Work = {
-  path: "/work",
+  path: "/paintings",
   label: localized.pages.work.label,
   title: localized.pages.work.title,
   description: localized.pages.work.description,
   // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  // All projects will be listed on the /home and /paintings routes
   };
 
   const gallery: Gallery = {

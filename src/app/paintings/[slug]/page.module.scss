@@ -1,0 +1,53 @@
+@use "../../../components/breakpoints.scss" as breakpoints;
+
+.paintingHeader {
+    position: sticky;
+    top: var(--static-space-16);
+    z-index: 8;
+    width: 100%;
+    padding: var(--static-space-12) var(--static-space-16);
+}
+
+.paintingPageContent {
+    align-items: flex-start;
+}
+
+.paintingPageContent > * {
+    min-width: 0;
+}
+
+.paintingPageImages img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border: 1px solid var(--neutral-alpha-weak);
+    border-radius: var(--radius-l);
+}
+
+.paintingPageDetails {
+    position: sticky;
+    top: var(--static-space-24);
+}
+
+.swatch {
+    width: var(--static-space-20);
+    height: var(--static-space-20);
+    border-radius: 999px;
+    border: 1px solid var(--neutral-alpha-medium);
+    box-shadow: inset 0 0 0 1px var(--static-transparent);
+}
+
+@media (max-width: breakpoints.$s) {
+    .paintingHeader {
+        top: var(--static-space-72);
+    }
+
+    .paintingPageContent > * {
+        width: 100%;
+    }
+
+    .paintingPageDetails {
+        position: static;
+    }
+}

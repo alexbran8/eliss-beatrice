@@ -30,7 +30,7 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const { home, about, person } = getContent(await getLocale());
+  const { home, about, person, work } = getContent(await getLocale());
 
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
@@ -110,6 +110,33 @@ export default async function Home() {
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
+      <RevealFx translateY="16" delay={0.7}>
+        <Column fillWidth gap="24" paddingX="l" marginY="l">
+          <Row fillWidth paddingRight="64">
+            <Line maxWidth={48} />
+          </Row>
+          <Row fillWidth gap="24" s={{ direction: "column" }}>
+            <Row flex={1} paddingTop="24">
+              <Heading as="h2" variant="display-strong-xs" wrap="balance">
+                {about.label}
+              </Heading>
+            </Row>
+            <Column flex={3} gap="16">
+              <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+                {about.intro.description}
+              </Text>
+              {routes["/about"] && (
+                <Button href={about.path} variant="secondary" size="m" arrowIcon>
+                  {about.label}
+                </Button>
+              )}
+            </Column>
+          </Row>
+          <Row fillWidth paddingLeft="64" horizontal="end">
+            <Line maxWidth={48} />
+          </Row>
+        </Column>
+      </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">
@@ -130,7 +157,15 @@ export default async function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
+      <Column fillWidth gap="24" horizontal="center">
+        <Heading as="h2" variant="heading-strong-xl" align="center">
+          {work.label}
+        </Heading>
+        <Projects range={[2, 3]} />
+        <Button href={work.path} variant="secondary" size="m" arrowIcon>
+          {work.label}
+        </Button>
+      </Column>
       <Mailchimp />
     </Column>
   );

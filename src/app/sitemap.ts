@@ -1,5 +1,5 @@
 import { getPosts } from "@/utils/utils";
-import { baseURL, routes as routesConfig } from "@/resources";
+import { baseURL, paintings, routes as routesConfig } from "@/resources";
 
 export default async function sitemap() {
   const blogs = routesConfig["/blog"]
@@ -9,9 +9,14 @@ export default async function sitemap() {
       }))
     : [];
 
-  const works = getPosts(["src", "app", "work", "projects"]).map((post) => ({
-    url: `${baseURL}/work/${post.slug}`,
+  const works = getPosts(["src", "app", "paintings", "projects"]).map((post) => ({
+    url: `${baseURL}/paintings/${post.slug}`,
     lastModified: post.metadata.publishedAt,
+  }));
+
+  const paintingRoutes = paintings.map((painting) => ({
+    url: `${baseURL}/paintings/${painting.slug}`,
+    lastModified: `${painting.year}-01-01`,
   }));
 
   const activeRoutes = Object.keys(routesConfig).filter(
@@ -23,5 +28,5 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...blogs, ...works];
+  return [...routes, ...blogs, ...works, ...paintingRoutes];
 }

@@ -3,6 +3,7 @@
 .card {
     min-height: 100%;
     outline: none;
+    cursor: pointer;
     transition:
         transform var(--transition-micro-medium),
         border-color var(--transition-micro-medium),
