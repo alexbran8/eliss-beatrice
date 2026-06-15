@@ -1,207 +1,600 @@
 [
   {
     "id": "ptg-001",
-    "slug": "after-the-rain",
+    "slug": "palette-and-colour-studies",
     "title": {
-      "en": "After the Rain",
-      "es": "Despues de la lluvia"
+      "en": "Palette and Colour Studies",
+      "es": "Estudios de paleta y color"
     },
     "description": {
-      "en": "A layered atmospheric piece built around soft movement, residual light, and the feeling of a room after weather has passed.",
-      "es": "Una pieza atmosferica por capas construida alrededor del movimiento suave, la luz residual y la sensacion de una habitacion despues de la lluvia."
+      "en": "A bright group of studio photographs around colour mixing, small painted surfaces, and densely layered floral marks.",
+      "es": "Un grupo luminoso de fotografias de estudio sobre mezcla de color, superficies pintadas pequenas y marcas florales densas."
     },
-    "year": 2025,
-    "series": "Atmospheres",
+    "year": 2026,
+    "series": "Studio Studies",
     "images": [
-      "/images/projects/project-01/cover-01.jpg",
-      "/images/projects/project-01/image-01.jpg"
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/temp3_ub0shh.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/temp1_n6yctz.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/temp0_cz6k8x.jpg"
     ],
     "dominantColours": [
       {
-        "name": "Misty blue",
-        "hex": "#8EA7B7"
+        "name": "Turquoise",
+        "hex": "#38A8A6"
       },
       {
-        "name": "Warm ivory",
-        "hex": "#E7DFCF"
+        "name": "Hot pink",
+        "hex": "#E33B87"
       },
       {
-        "name": "Graphite",
-        "hex": "#3E4244"
+        "name": "Sun yellow",
+        "hex": "#F4C22B"
       }
     ],
-    "materials": ["Acrylic paint", "Oil pastel", "Graphite", "Cotton canvas"],
-    "surface": "Stretched canvas",
+    "materials": ["Acrylic paint", "Mixed media", "Found surface"],
+    "surface": "Mixed media surface",
     "dimensions": {
-      "height": 90,
-      "width": 70,
-      "depth": 3,
-      "unit": "cm"
-    },
-    "orientation": "portrait",
-    "framed": false,
-    "signed": true,
-    "status": "available",
-    "price": {
-      "amount": 1200,
-      "currency": "EUR"
-    },
-    "availabilityNote": {
-      "en": "Available for studio pickup or insured shipping.",
-      "es": "Disponible para recogida en estudio o envio asegurado."
-    },
-    "tags": ["atmospheric", "blue", "mixed media", "canvas"]
-  },
-  {
-    "id": "ptg-002",
-    "slug": "red-memory",
-    "title": {
-      "en": "Red Memory",
-      "es": "Memoria roja"
-    },
-    "description": {
-      "en": "A compact study of heat, gesture, and contrast, using saturated reds against quiet neutral passages.",
-      "es": "Un estudio compacto de calor, gesto y contraste, con rojos saturados frente a pasajes neutros y silenciosos."
-    },
-    "year": 2025,
-    "series": "Small Fires",
-    "images": [
-      "/images/projects/project-01/cover-02.jpg",
-      "/images/projects/project-01/image-02.jpg"
-    ],
-    "dominantColours": [
-      {
-        "name": "Cadmium red",
-        "hex": "#C43B2D"
-      },
-      {
-        "name": "Soft black",
-        "hex": "#242221"
-      },
-      {
-        "name": "Blush",
-        "hex": "#D7A29A"
-      }
-    ],
-    "materials": ["Oil paint", "Cold wax", "Linen panel"],
-    "surface": "Linen panel",
-    "dimensions": {
-      "height": 50,
-      "width": 40,
-      "depth": 2,
-      "unit": "cm"
-    },
-    "orientation": "portrait",
-    "framed": true,
-    "signed": true,
-    "status": "reserved",
-    "price": {
-      "amount": 680,
-      "currency": "EUR"
-    },
-    "availabilityNote": {
-      "en": "Currently reserved pending collector confirmation.",
-      "es": "Reservada temporalmente a la espera de confirmacion del coleccionista."
-    },
-    "tags": ["red", "oil", "gesture", "linen"]
-  },
-  {
-    "id": "ptg-003",
-    "slug": "quiet-garden",
-    "title": {
-      "en": "Quiet Garden",
-      "es": "Jardin silencioso"
-    },
-    "description": {
-      "en": "A botanical abstraction focused on slow greens, translucent marks, and the rhythm of leaves in shade.",
-      "es": "Una abstraccion botanica centrada en verdes lentos, marcas translucidas y el ritmo de las hojas en sombra."
-    },
-    "year": 2024,
-    "series": "Garden Studies",
-    "images": [
-      "/images/projects/project-01/cover-03.jpg",
-      "/images/projects/project-01/image-03.jpg"
-    ],
-    "dominantColours": [
-      {
-        "name": "Olive green",
-        "hex": "#6F7650"
-      },
-      {
-        "name": "Sage",
-        "hex": "#A8B39B"
-      },
-      {
-        "name": "Pale ochre",
-        "hex": "#D6C28C"
-      }
-    ],
-    "materials": ["Watercolour", "Ink", "Coloured pencil", "Archival cotton paper"],
-    "surface": "300 gsm archival paper",
-    "dimensions": {
-      "height": 42,
-      "width": 59.4,
-      "unit": "cm"
-    },
-    "orientation": "landscape",
-    "framed": false,
-    "signed": true,
-    "status": "available",
-    "price": {
-      "amount": 420,
-      "currency": "EUR"
-    },
-    "availabilityNote": {
-      "en": "Ships flat in archival packaging.",
-      "es": "Se envia en plano con embalaje de conservacion."
-    },
-    "tags": ["botanical", "green", "paper", "watercolour"]
-  },
-  {
-    "id": "ptg-004",
-    "slug": "night-window",
-    "title": {
-      "en": "Night Window",
-      "es": "Ventana nocturna"
-    },
-    "description": {
-      "en": "A darker interior scene with luminous edges, built from scraped acrylic layers and dry pigment.",
-      "es": "Una escena interior oscura con bordes luminosos, construida con capas de acrilico raspado y pigmento seco."
-    },
-    "year": 2024,
-    "series": "Interiors",
-    "images": ["/images/projects/project-01/cover-04.jpg"],
-    "dominantColours": [
-      {
-        "name": "Midnight blue",
-        "hex": "#1F2A44"
-      },
-      {
-        "name": "Muted violet",
-        "hex": "#6C5A7D"
-      },
-      {
-        "name": "Candle yellow",
-        "hex": "#F0C86A"
-      }
-    ],
-    "materials": ["Acrylic paint", "Dry pigment", "Charcoal", "Wood panel"],
-    "surface": "Cradled wood panel",
-    "dimensions": {
-      "height": 80,
-      "width": 80,
-      "depth": 4,
+      "height": 30,
+      "width": 30,
       "unit": "cm"
     },
     "orientation": "square",
     "framed": false,
     "signed": true,
-    "status": "sold",
+    "status": "not-for-sale",
     "price": null,
     "availabilityNote": {
-      "en": "Sold. Similar commissions can be discussed.",
-      "es": "Vendida. Se pueden consultar encargos similares."
+      "en": "Studio study. Details to be confirmed.",
+      "es": "Estudio de taller. Detalles por confirmar."
     },
-    "tags": ["interior", "night", "panel", "dark"]
+    "tags": ["colour", "study", "floral", "studio"]
+  },
+  {
+    "id": "ptg-002",
+    "slug": "red-floral-interior",
+    "title": {
+      "en": "Red Floral Interior",
+      "es": "Interior floral rojo"
+    },
+    "description": {
+      "en": "A red floral work shown through several views, including framed and close detail photographs.",
+      "es": "Una obra floral roja presentada en varias vistas, incluyendo fotografias enmarcadas y detalles cercanos."
+    },
+    "year": 2020,
+    "series": "Red Florals",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20200309_133206_484_hyat9m.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20200309_133116_918_arj9gi.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20200309_133054_153_mh9638.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20200309_133039_303_lwompl.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Crimson",
+        "hex": "#B51F2E"
+      },
+      {
+        "name": "Rose",
+        "hex": "#D96B80"
+      },
+      {
+        "name": "Paper white",
+        "hex": "#F0E7DF"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media", "Paper"],
+    "surface": "Paper",
+    "dimensions": {
+      "height": 60,
+      "width": 45,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": true,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["red", "floral", "framed", "paper"]
+  },
+  {
+    "id": "ptg-003",
+    "slug": "floral-mosaic-grid",
+    "title": {
+      "en": "Floral Mosaic Grid",
+      "es": "Mosaico floral"
+    },
+    "description": {
+      "en": "A dense floral composition documented from multiple angles and detail crops.",
+      "es": "Una composicion floral densa documentada desde varios angulos y recortes de detalle."
+    },
+    "year": 2020,
+    "series": "Floral Grids",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20200309_124009_030_viqejx.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20200309_123944_155_d1nj34.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20200309_123928_388_frqlee.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Golden yellow",
+        "hex": "#F2C230"
+      },
+      {
+        "name": "Leaf green",
+        "hex": "#5E8C3A"
+      },
+      {
+        "name": "Deep violet",
+        "hex": "#5C3A83"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Mixed media surface",
+    "dimensions": {
+      "height": 50,
+      "width": 40,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["floral", "yellow", "grid", "mixed media"]
+  },
+  {
+    "id": "ptg-004",
+    "slug": "garden-framed-floral",
+    "title": {
+      "en": "Garden Framed Floral",
+      "es": "Floral enmarcado en jardin"
+    },
+    "description": {
+      "en": "A floral piece photographed outdoors among plants, pairing the finished work with its garden setting.",
+      "es": "Una pieza floral fotografiada al aire libre entre plantas, uniendo la obra terminada con su entorno de jardin."
+    },
+    "year": 2019,
+    "series": "Garden Views",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20191110_122705_113_biexcu.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20191110_114548_pixyp3.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Garden green",
+        "hex": "#5E7D32"
+      },
+      {
+        "name": "Flower yellow",
+        "hex": "#E8C22F"
+      },
+      {
+        "name": "Warm red",
+        "hex": "#B74932"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Paper",
+    "dimensions": {
+      "height": 60,
+      "width": 45,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": true,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["garden", "floral", "framed", "green"]
+  },
+  {
+    "id": "ptg-005",
+    "slug": "miniature-red-triptych",
+    "title": {
+      "en": "Miniature Red Triptych",
+      "es": "Triptico rojo pequeno"
+    },
+    "description": {
+      "en": "A vertical arrangement of small red works with repeated marks and a quiet, minimal presentation.",
+      "es": "Una disposicion vertical de pequenas obras rojas con marcas repetidas y una presentacion sobria."
+    },
+    "year": 2019,
+    "series": "Small Red Works",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20191127_152724_313_wzo2ss.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Red",
+        "hex": "#B62A2E"
+      },
+      {
+        "name": "Warm white",
+        "hex": "#EFE6D6"
+      },
+      {
+        "name": "Black",
+        "hex": "#202020"
+      }
+    ],
+    "materials": ["Acrylic paint", "Paper"],
+    "surface": "Paper",
+    "dimensions": {
+      "height": 40,
+      "width": 20,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["red", "triptych", "small work", "paper"]
+  },
+  {
+    "id": "ptg-006",
+    "slug": "vertical-colour-field",
+    "title": {
+      "en": "Vertical Colour Field",
+      "es": "Campo vertical de color"
+    },
+    "description": {
+      "en": "A tall, rhythmical colour study built from repeated vertical marks.",
+      "es": "Un estudio cromatico alto y ritmico construido con marcas verticales repetidas."
+    },
+    "year": 2019,
+    "series": "Colour Fields",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/IMG_20191110_105710_220_ffgzlz.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Coral",
+        "hex": "#E45F4E"
+      },
+      {
+        "name": "Cobalt",
+        "hex": "#3978B8"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#F0C439"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Paper",
+    "dimensions": {
+      "height": 70,
+      "width": 35,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["colour", "vertical", "pattern", "paper"]
+  },
+  {
+    "id": "ptg-007",
+    "slug": "heart-study",
+    "title": {
+      "en": "Heart Study",
+      "es": "Estudio de corazon"
+    },
+    "description": {
+      "en": "A heart-shaped painted work documented through several studio photos and details.",
+      "es": "Una obra pintada en forma de corazon documentada con varias fotografias y detalles de taller."
+    },
+    "year": 2020,
+    "series": "Heart Studies",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/BeautyPlus_20200314175042119_save_jfplhb.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/BeautyPlus_20200314175104254_save_avzvxv.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/BeautyPlus_20200314175021651_save_a492jx.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/BeautyPlus_20200314175000856_save_eexs3h.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/BeautyPlus_20200314174938926_save_htlxin.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Warm orange",
+        "hex": "#D8742A"
+      },
+      {
+        "name": "Cream",
+        "hex": "#E8D6B8"
+      },
+      {
+        "name": "Deep red",
+        "hex": "#8C2F24"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Shaped surface",
+    "dimensions": {
+      "height": 30,
+      "width": 30,
+      "unit": "cm"
+    },
+    "orientation": "square",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["heart", "orange", "study", "shaped"]
+  },
+  {
+    "id": "ptg-008",
+    "slug": "blue-window-abstraction",
+    "title": {
+      "en": "Blue Window Abstraction",
+      "es": "Abstraccion de ventana azul"
+    },
+    "description": {
+      "en": "A blue-toned abstract work photographed in a window-like frame.",
+      "es": "Una obra abstracta en tonos azules fotografiada en un marco similar a una ventana."
+    },
+    "year": 2021,
+    "series": "Window Works",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20210830_170947_njneus.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Sky blue",
+        "hex": "#4B92C8"
+      },
+      {
+        "name": "Brick red",
+        "hex": "#9D4338"
+      },
+      {
+        "name": "Soft white",
+        "hex": "#E7E2D8"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Canvas or board",
+    "dimensions": {
+      "height": 60,
+      "width": 45,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": true,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["blue", "abstract", "framed", "window"]
+  },
+  {
+    "id": "ptg-009",
+    "slug": "confetti-abstraction",
+    "title": {
+      "en": "Confetti Abstraction",
+      "es": "Abstraccion confeti"
+    },
+    "description": {
+      "en": "Two close views of a vivid abstract surface with scattered colour and energetic marks.",
+      "es": "Dos vistas cercanas de una superficie abstracta viva con color disperso y marcas energicas."
+    },
+    "year": 2021,
+    "series": "Colour Fields",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20210827_154114_yibmks.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20210827_140626_xlxfhb.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Candy pink",
+        "hex": "#EE6BA8"
+      },
+      {
+        "name": "Bright orange",
+        "hex": "#EF7A2C"
+      },
+      {
+        "name": "Leaf green",
+        "hex": "#65A846"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Canvas or paper",
+    "dimensions": {
+      "height": 60,
+      "width": 45,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["abstract", "colour", "gesture", "mixed media"]
+  },
+  {
+    "id": "ptg-010",
+    "slug": "yellow-branch-series",
+    "title": {
+      "en": "Yellow Branch Series",
+      "es": "Serie de ramas amarillas"
+    },
+    "description": {
+      "en": "A yellow branch-like work shown through process photos, detail shots, and studio views.",
+      "es": "Una obra amarilla con formas de rama mostrada mediante fotos de proceso, detalles y vistas de taller."
+    },
+    "year": 2020,
+    "series": "Yellow Branches",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200714_152501_shfba6.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_133149_r9hzhk.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_133125_dbyvss.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_133102_ydisij.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_133052_njr4xr.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_133038_tr5xha.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_114703_glhx0a.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_114122_mr1587464598336_l3pzef.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200421_061507_y8evqa.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Cadmium yellow",
+        "hex": "#E7AF15"
+      },
+      {
+        "name": "Ochre",
+        "hex": "#B97718"
+      },
+      {
+        "name": "Ink brown",
+        "hex": "#4C2F1A"
+      }
+    ],
+    "materials": ["Acrylic paint", "Ink", "Mixed media"],
+    "surface": "Paper or board",
+    "dimensions": {
+      "height": 40,
+      "width": 60,
+      "unit": "cm"
+    },
+    "orientation": "landscape",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["yellow", "branch", "process", "mixed media"]
+  },
+  {
+    "id": "ptg-011",
+    "slug": "studio-grid-with-red-works",
+    "title": {
+      "en": "Studio Grid with Red Works",
+      "es": "Cuadricula de taller con rojos"
+    },
+    "description": {
+      "en": "A studio grouping of small works, with a red floral grid and surrounding studies.",
+      "es": "Una agrupacion de taller de obras pequenas, con una cuadricula floral roja y estudios alrededor."
+    },
+    "year": 2020,
+    "series": "Studio Walls",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200214_123944_uhm0et.jpg",
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20200214_123216_ahxzte.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Red",
+        "hex": "#B72C2D"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#E6B82D"
+      },
+      {
+        "name": "Neutral white",
+        "hex": "#E8E1D7"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Mixed media surface",
+    "dimensions": {
+      "height": 60,
+      "width": 45,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["studio", "red", "grid", "small works"]
+  },
+  {
+    "id": "ptg-012",
+    "slug": "red-door-texture",
+    "title": {
+      "en": "Red Door Texture",
+      "es": "Textura de puerta roja"
+    },
+    "description": {
+      "en": "A vertical red textured work with a weathered, architectural presence.",
+      "es": "Una obra vertical roja y texturizada con presencia envejecida y arquitectonica."
+    },
+    "year": 2019,
+    "series": "Red Textures",
+    "images": [
+      "https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/20191029_181122_doplm4.jpg"
+    ],
+    "dominantColours": [
+      {
+        "name": "Brick red",
+        "hex": "#9B3A32"
+      },
+      {
+        "name": "Dark green",
+        "hex": "#304531"
+      },
+      {
+        "name": "Muted pink",
+        "hex": "#B57973"
+      }
+    ],
+    "materials": ["Acrylic paint", "Mixed media"],
+    "surface": "Canvas or board",
+    "dimensions": {
+      "height": 70,
+      "width": 45,
+      "unit": "cm"
+    },
+    "orientation": "portrait",
+    "framed": false,
+    "signed": true,
+    "status": "not-for-sale",
+    "price": null,
+    "availabilityNote": {
+      "en": "Archive work. Details to be confirmed.",
+      "es": "Obra de archivo. Detalles por confirmar."
+    },
+    "tags": ["red", "texture", "vertical", "mixed media"]
   }
 ]
