@@ -16,6 +16,7 @@ import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { getLocale } from "next-intl/server";
+import styles from "./page.module.scss";
 
 export async function generateMetadata() {
   const { home } = getContent(await getLocale());
@@ -107,8 +108,30 @@ export default async function Home() {
           )}
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+      <RevealFx translateY="16" delay={0.6} fillWidth>
+        <Column
+          className={styles.paintingsHero}
+          fillWidth
+          horizontal="center"
+          vertical="center"
+          padding="xl"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.58)), url(https://res.cloudinary.com/dwzlgk6oj/image/upload/v1781516472/temp3_ub0shh.jpg)",
+          }}
+        >
+          <Column maxWidth="s" gap="20" horizontal="center" align="center">
+            <Heading as="h2" variant="display-strong-m" align="center" wrap="balance">
+              {work.title}
+            </Heading>
+            <Text variant="heading-default-m" align="center" wrap="balance">
+              {work.description}
+            </Text>
+            <Button href={work.path} variant="primary" size="m" arrowIcon>
+              {work.label}
+            </Button>
+          </Column>
+        </Column>
       </RevealFx>
       <RevealFx translateY="16" delay={0.7}>
         <Column fillWidth gap="24" paddingX="l" marginY="l">

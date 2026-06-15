@@ -1,0 +1,18 @@
+@use "../components/breakpoints.scss" as breakpoints;
+
+.paintingsHero {
+    min-height: 440px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid var(--neutral-alpha-weak);
+    border-radius: var(--radius-l);
+}
+
+@media (max-width: breakpoints.$s) {
+    .paintingsHero {
+        min-height: 360px;
+        padding: var(--static-space-32) var(--static-space-20);
+        border-radius: var(--radius-m);
+    }
+}
