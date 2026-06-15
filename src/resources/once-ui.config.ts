@@ -13,6 +13,7 @@ import {
 } from "@/types";
 import metadata from "./metadata.json";
 import en from "./locales/en.json";
+import { features } from "./features";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = metadata.site.url;
@@ -21,7 +22,7 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": metadata.pages.about.display,
   "/work": true,
-  "/blog": true,
+  "/blog": features.blog,
   "/gallery": true,
 };
 
