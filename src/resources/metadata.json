@@ -3,7 +3,12 @@
   "supportedLocales": ["en", "es"],
   "site": {
     "url": "https://demo.magic-portfolio.com",
-    "image": "/images/og/home.jpg"
+    "image": "/images/og/home.jpg",
+    "featured": {
+      "display": false,
+      "name": "Once UI",
+      "href": "/work/building-once-ui-a-customizable-design-system"
+    }
   },
   "artist": {
     "firstName": "Eliss",

@@ -7,7 +7,8 @@
     "home": {
       "label": "Home",
       "headline": "Building expressive worlds through art",
-      "subline": "I'm Eliss Beatrice, an artist exploring image, emotion, and atmosphere through visual storytelling."
+      "subline": "I'm Eliss Beatrice, an artist exploring image, emotion, and atmosphere through visual storytelling.",
+      "featuredLabel": "Featured work"
     },
     "about": {
       "label": "About",
