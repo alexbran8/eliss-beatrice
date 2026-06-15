@@ -7,7 +7,7 @@ import { useLocale } from "next-intl";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, getContent } from "@/resources";
+import { routes, display, features, getContent } from "@/resources";
 import { locales, Locale } from "@/i18n/locales";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
@@ -50,6 +50,7 @@ export const Header = () => {
   const router = useRouter();
   const currentLocale = useLocale() as Locale;
   const { person, about, blog, work, gallery } = getContent(currentLocale);
+  const contactLabel = currentLocale === "es" ? "Contacto" : "Contact";
 
   const switchLocale = (locale: Locale) => {
     document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; samesite=lax`;
@@ -171,6 +172,23 @@ export const Header = () => {
                       prefixIcon="gallery"
                       href="/gallery"
                       selected={pathname.startsWith("/gallery")}
+                    />
+                  </Row>
+                </>
+              )}
+              {features.contact && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="email"
+                      href="/#contact"
+                      label={contactLabel}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon="email"
+                      href="/#contact"
                     />
                   </Row>
                 </>

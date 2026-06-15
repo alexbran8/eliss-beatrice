@@ -11,7 +11,7 @@ import {
   Meta,
   Line,
 } from "@once-ui-system/core";
-import { baseURL, routes, getContent } from "@/resources";
+import { baseURL, routes, features, getContent } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
@@ -31,7 +31,13 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const { home, about, person, work } = getContent(await getLocale());
+  const locale = await getLocale();
+  const { home, about, person, work } = getContent(locale);
+  const contactLabel = locale === "es" ? "Contacto" : "Contact";
+  const contactDescription =
+    locale === "es"
+      ? "Para consultas sobre obras disponibles, encargos o conversaciones de estudio, puedes escribir directamente."
+      : "For available works, commissions, or studio conversations, you can write directly.";
 
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
@@ -189,6 +195,33 @@ export default async function Home() {
           {work.label}
         </Button>
       </Column>
+      {features.contact && (
+        <Column id="contact" fillWidth gap="24" paddingX="l" marginY="l">
+          <Row fillWidth paddingRight="64">
+            <Line maxWidth={48} />
+          </Row>
+          <Row fillWidth gap="24" s={{ direction: "column" }}>
+            <Row flex={1} paddingTop="24">
+              <Heading as="h2" variant="display-strong-xs" wrap="balance">
+                {contactLabel}
+              </Heading>
+            </Row>
+            <Column flex={3} gap="20">
+              <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+                {contactDescription}
+              </Text>
+              <Row gap="12" wrap vertical="center">
+                <Button href={`mailto:${person.email}`} variant="secondary" size="m" arrowIcon>
+                  {person.email}
+                </Button>
+              </Row>
+            </Column>
+          </Row>
+          <Row fillWidth paddingLeft="64" horizontal="end">
+            <Line maxWidth={48} />
+          </Row>
+        </Column>
+      )}
       <Mailchimp />
     </Column>
   );

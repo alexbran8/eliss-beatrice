@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, getContent } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { getLocale } from "next-intl/server";
@@ -33,9 +33,6 @@ export default async function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading marginBottom="l" variant="heading-strong-xl" align="center">
-        {work.title}
-      </Heading>
       <Projects />
     </Column>
   );

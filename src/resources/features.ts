@@ -6,5 +6,6 @@ function isEnabled(value: string | undefined, defaultValue = false) {
 
 export const features = {
   blog: isEnabled(process.env.NEXT_PUBLIC_FEATURE_BLOG, false),
+  contact: isEnabled(process.env.NEXT_PUBLIC_FEATURE_CONTACT, false),
   newsletter: isEnabled(process.env.NEXT_PUBLIC_FEATURE_NEWSLETTER, false),
 };
