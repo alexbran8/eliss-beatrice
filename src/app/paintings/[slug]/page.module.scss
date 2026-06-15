@@ -1,9 +1,6 @@
 @use "../../../components/breakpoints.scss" as breakpoints;
 
 .paintingHeader {
-    position: sticky;
-    top: var(--static-space-16);
-    z-index: 8;
     width: 100%;
     padding: var(--static-space-12) var(--static-space-16);
 }
@@ -39,10 +36,6 @@
 }
 
 @media (max-width: breakpoints.$s) {
-    .paintingHeader {
-        top: var(--static-space-72);
-    }
-
     .paintingPageContent > * {
         width: 100%;
     }
