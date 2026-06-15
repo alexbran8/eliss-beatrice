@@ -19,7 +19,7 @@ const baseURL: string = metadata.site.url;
 
 const routes: RoutesConfig = {
   "/": true,
-  "/about": true,
+  "/about": metadata.pages.about.display,
   "/work": true,
   "/blog": true,
   "/gallery": true,

@@ -10,6 +10,11 @@
       "href": "/work/building-once-ui-a-customizable-design-system"
     }
   },
+  "pages": {
+    "about": {
+      "display": false
+    }
+  },
   "artist": {
     "firstName": "Eliss",
     "lastName": "Beatrice",
