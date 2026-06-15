@@ -4,4 +4,20 @@
     .mobile {
         text-align: center;
     }
+
+    .textStack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--static-space-4);
+    }
+
+    .textStack > span {
+        display: block;
+    }
+
+    .iconStack {
+        flex-direction: column;
+        align-items: center;
+    }
 }
