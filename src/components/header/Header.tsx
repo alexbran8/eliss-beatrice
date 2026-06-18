@@ -3,53 +3,19 @@
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
+import { Fade, Line, Row, ToggleButton } from "@once-ui-system/core";
 
 import { type Locale, locales } from "@/i18n/locales";
 import { display, features, getContent, routes } from "@/resources";
 import { ThemeToggle } from "../theme-toggle";
 import styles from "./Header.module.scss";
 
-type TimeDisplayProps = {
-  timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
-};
-
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
-  const [currentTime, setCurrentTime] = useState("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
-      };
-      const timeString = new Intl.DateTimeFormat(locale, options).format(now);
-      setCurrentTime(timeString);
-    };
-
-    updateTime();
-    const intervalId = setInterval(updateTime, 1000);
-
-    return () => clearInterval(intervalId);
-  }, [timeZone, locale]);
-
-  return <>{currentTime}</>;
-};
-
-export default TimeDisplay;
-
 export const Header = () => {
   const pathname = usePathname() ?? "";
   const router = useRouter();
   const currentLocale = useLocale() as Locale;
-  const { person, about, blog, work, gallery } = getContent(currentLocale);
+  const { about, blog, work, gallery } = getContent(currentLocale);
   const contactLabel = currentLocale === "es" ? "Contacto" : "Contact";
 
   const switchLocale = (locale: Locale) => {
@@ -84,9 +50,7 @@ export const Header = () => {
           position: "fixed",
         }}
       >
-        <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
-        </Row>
+        <Row fillWidth />
         <Row fillWidth horizontal="center">
           <Row
             background="page"
@@ -207,19 +171,7 @@ export const Header = () => {
             </Row>
           </Row>
         </Row>
-        <Flex fillWidth horizontal="end" vertical="center">
-          <Flex
-            paddingRight="12"
-            horizontal="end"
-            vertical="center"
-            textVariant="body-default-s"
-            gap="20"
-          >
-            <Flex s={{ hide: true }}>
-              {display.time && <TimeDisplay timeZone={person.location} />}
-            </Flex>
-          </Flex>
-        </Flex>
+        <Row fillWidth />
       </Row>
     </>
   );

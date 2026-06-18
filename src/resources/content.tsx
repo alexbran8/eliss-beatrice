@@ -68,6 +68,7 @@ function createContent(locale: string = defaultLocale) {
         </Text>
       </Row>
     ),
+    ariaLabel: `${localized.pages.home.featuredLabel}: ${metadata.site.featured.name}`,
     href: metadata.site.featured.href,
   },
   subline: <>{localized.pages.home.subline}</>,
