@@ -1,9 +1,10 @@
 "use client";
 
-import React, { JSX } from "react";
-import { Heading, Flex, IconButton, useToast } from "@once-ui-system/core";
+import { Flex, Heading, IconButton, useToast } from "@once-ui-system/core";
+import type React from "react";
+import type { JSX } from "react";
 
-import styles from "@/components/HeadingLink.module.scss";
+import styles from "./HeadingLink.module.scss";
 
 interface HeadingLinkProps {
   id: string;

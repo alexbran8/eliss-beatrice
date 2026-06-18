@@ -13,7 +13,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, routes, features, getContent } from "@/resources";
 import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
+import { Projects } from "@/components/projects/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { getLocale } from "next-intl/server";
 import styles from "./page.module.scss";

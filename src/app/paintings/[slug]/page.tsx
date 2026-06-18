@@ -30,7 +30,7 @@ import {
 } from "@/resources";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
-import { Projects } from "@/components/work/Projects";
+import { Projects } from "@/components/projects/Projects";
 import { getLocale } from "next-intl/server";
 import styles from "./page.module.scss";
 

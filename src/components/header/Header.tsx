@@ -1,15 +1,15 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, features, getContent } from "@/resources";
-import { locales, Locale } from "@/i18n/locales";
-import { ThemeToggle } from "./ThemeToggle";
+import { type Locale, locales } from "@/i18n/locales";
+import { display, features, getContent, routes } from "@/resources";
+import { ThemeToggle } from "../theme-toggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
@@ -98,7 +98,9 @@ export const Header = () => {
             zIndex={1}
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
-              {routes["/"] && <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />}
+              {routes["/"] && (
+                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+              )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
                 <>
@@ -179,17 +181,10 @@ export const Header = () => {
               {features.contact && (
                 <>
                   <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="email"
-                      href="/#contact"
-                      label={contactLabel}
-                    />
+                    <ToggleButton prefixIcon="email" href="/#contact" label={contactLabel} />
                   </Row>
                   <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="email"
-                      href="/#contact"
-                    />
+                    <ToggleButton prefixIcon="email" href="/#contact" />
                   </Row>
                 </>
               )}

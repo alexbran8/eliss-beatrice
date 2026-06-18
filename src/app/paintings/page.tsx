@@ -1,6 +1,6 @@
 import { Column, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, getContent } from "@/resources";
-import { Projects } from "@/components/work/Projects";
+import { Projects } from "@/components/projects/Projects";
 import { getLocale } from "next-intl/server";
 
 export async function generateMetadata() {

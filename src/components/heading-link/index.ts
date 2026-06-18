@@ -1,0 +1,1 @@
+export { HeadingLink } from "./HeadingLink";
