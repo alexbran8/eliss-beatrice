@@ -102,6 +102,12 @@ export interface Home extends BasePageConfig {
   };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
+  /** Collaborators section text */
+  collaborators: {
+    title: string;
+    description: string;
+    logosLabel: string;
+  };
 }
 
 /**

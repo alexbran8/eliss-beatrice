@@ -9,6 +9,12 @@ type Collaborator = {
   logo?: string;
 };
 
+type CollaboratorsSectionProps = {
+  title: string;
+  description: string;
+  logosLabel: string;
+};
+
 const collaborators: Collaborator[] = [
   {
     name: "Studio Partner",
@@ -28,19 +34,23 @@ const collaborators: Collaborator[] = [
   },
 ];
 
-export const CollaboratorsSection = () => (
+export const CollaboratorsSection = ({
+  title,
+  description,
+  logosLabel,
+}: CollaboratorsSectionProps) => (
   <SectionFrame as="section" aria-labelledby="home-collaborators-title">
     <Row fillWidth gap="24" s={{ direction: "column" }}>
       <Row flex={1} paddingTop="24">
         <Heading id="home-collaborators-title" as="h2" variant="display-strong-xs" wrap="balance">
-          Collaborators
+          {title}
         </Heading>
       </Row>
       <Column flex={3} gap="20">
         <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
-          Creative partners, studios, and institutions connected to the work.
+          {description}
         </Text>
-        <ul className={styles.grid} aria-label="Collaborator logos">
+        <ul className={styles.grid} aria-label={logosLabel}>
           {collaborators.map((collaborator) => (
             <li className={styles.item} key={collaborator.name}>
               <div className={styles.logo}>

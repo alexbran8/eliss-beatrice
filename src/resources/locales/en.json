@@ -8,7 +8,12 @@
       "label": "Home",
       "headline": "Building expressive worlds through art",
       "subline": "I'm Eliss Beatrice, an artist exploring image, emotion, and atmosphere through visual storytelling.",
-      "featuredLabel": "Featured work"
+      "featuredLabel": "Featured work",
+      "collaborators": {
+        "title": "Collaborators",
+        "description": "Creative partners, studios, and institutions connected to the work.",
+        "logosLabel": "Collaborator logos"
+      }
     },
     "about": {
       "label": "About",

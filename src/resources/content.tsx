@@ -72,6 +72,7 @@ function createContent(locale: string = defaultLocale) {
     href: metadata.site.featured.href,
   },
   subline: <>{localized.pages.home.subline}</>,
+  collaborators: localized.pages.home.collaborators,
   };
 
   const about: About = {
