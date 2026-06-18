@@ -191,9 +191,7 @@ export default async function Home() {
           {work.label}
         </Heading>
         <Projects range={[2, 3]} />
-        <Button href={work.path} variant="secondary" size="m" arrowIcon>
-          {work.label}
-        </Button>
+
       </Column>
       {features.contact && (
         <Column id="contact" fillWidth gap="24" paddingX="l" marginY="l">
