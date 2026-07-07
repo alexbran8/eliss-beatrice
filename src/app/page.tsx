@@ -48,9 +48,7 @@ export default async function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <HomeHero home={home} about={about} person={person} showAboutLink={routes["/about"]} />
-      </Column>
+      <HomeHero />
       <PaintingsHeroSection work={work} />
       <AboutIntroSection about={about} showAboutLink={routes["/about"]} />
       {routes["/blog"] && <BlogPreviewSection title="Latest from the blog" />}
