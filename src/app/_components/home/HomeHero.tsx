@@ -31,7 +31,6 @@ export const HomeHero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const activeSlideRef = useRef<string | null>(null);
   const previousVideoTimeRef = useRef(0);
-  const textCycleStartedAtRef = useRef<number | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [activeSlideId, setActiveSlideId] = useState<string | null>(null);
 
@@ -48,8 +47,6 @@ export const HomeHero = () => {
       video.play().catch(() => {
         // Browsers may still block autoplay in low-power or data-saver modes.
       });
-
-      textCycleStartedAtRef.current ??= performance.now();
     };
 
     playVideo();
@@ -63,7 +60,7 @@ export const HomeHero = () => {
   }, []);
 
   const resetTextCycle = useCallback(() => {
-    textCycleStartedAtRef.current = performance.now();
+    previousVideoTimeRef.current = 0;
     activeSlideRef.current = null;
     setActiveSlideId(null);
   }, []);
@@ -74,15 +71,14 @@ export const HomeHero = () => {
     const syncTextToVideo = () => {
       const video = videoRef.current;
 
-      if (video && textCycleStartedAtRef.current) {
+      if (video && !video.paused && video.readyState > 0) {
         if (video.currentTime + 0.5 < previousVideoTimeRef.current) {
           resetTextCycle();
         }
 
         previousVideoTimeRef.current = video.currentTime;
 
-        const currentTime =
-          ((performance.now() - textCycleStartedAtRef.current) / 1000) % heroVideoDuration;
+        const currentTime = video.currentTime % heroVideoDuration;
         const activeSlide =
           heroTextSlides.find(
             ({ startAt, duration }) => currentTime >= startAt && currentTime < startAt + duration,
@@ -130,6 +126,7 @@ export const HomeHero = () => {
           playsInline
           preload="auto"
           onEnded={resetTextCycle}
+          onPlaying={resetTextCycle}
           onSeeked={resetTextCycle}
         >
           <track
