@@ -1,21 +1,33 @@
 "use client";
 
 import { IconButton, RevealFx } from "@once-ui-system/core";
-import { type CSSProperties, useCallback, useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
+import { type CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from "react";
+
+import { getLocalizedMetadata } from "@/resources/locales";
 
 import styles from "./HomeHero.module.scss";
 
 const heroVideoDuration = 17;
 
-const heroTextSlides = [
-  { id: "begins", startAt: 2, duration: 2.5, lines: ["It begins with glass."] },
-  { id: "color", startAt: 6, duration: 2.5, lines: ["It continues with color."] },
-  { id: "light", startAt: 10, duration: 2.5, lines: ["It ends with texture and feelings."] },
-  // { id: "closer", startAt: 11, duration: 2, lines: ["A quiet conversation", "with color."] },
-  { id: "felt", startAt: 13, duration: 3, lines: ["Art made to be felt.", "Not merely seen."] },
-];
+const heroTextTiming = [
+  { id: "begins", startAt: 2, duration: 2.5 },
+  { id: "color", startAt: 6, duration: 2.5 },
+  { id: "light", startAt: 10, duration: 2.5 },
+  { id: "felt", startAt: 13, duration: 3 },
+] as const;
 
 export const HomeHero = () => {
+  const locale = useLocale();
+  const localized = getLocalizedMetadata(locale);
+  const heroTextSlides = useMemo(
+    () =>
+      heroTextTiming.map((slide) => ({
+        ...slide,
+        lines: localized.pages.home.heroSlides[slide.id],
+      })),
+    [localized],
+  );
   const videoRef = useRef<HTMLVideoElement>(null);
   const activeSlideRef = useRef<string | null>(null);
   const previousVideoTimeRef = useRef(0);
@@ -89,7 +101,7 @@ export const HomeHero = () => {
     animationFrame = window.requestAnimationFrame(syncTextToVideo);
 
     return () => window.cancelAnimationFrame(animationFrame);
-  }, [resetTextCycle]);
+  }, [heroTextSlides, resetTextCycle]);
 
   const toggleMute = () => {
     const video = videoRef.current;

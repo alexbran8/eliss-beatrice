@@ -9,6 +9,12 @@
       "headline": "Building expressive worlds through art",
       "subline": "I'm Eliss Beatrice, an artist exploring image, emotion, and atmosphere through visual storytelling.",
       "featuredLabel": "Featured work",
+      "heroSlides": {
+        "begins": ["It begins with glass."],
+        "color": ["It continues with color."],
+        "light": ["It ends with texture and feelings."],
+        "felt": ["Art made to be felt.", "Not merely seen."]
+      },
       "collaborators": {
         "title": "Collaborators",
         "description": "Creative partners, studios, and institutions connected to the work.",
