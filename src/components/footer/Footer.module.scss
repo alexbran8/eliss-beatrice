@@ -1,5 +1,14 @@
 @use "../breakpoints.scss" as breakpoints;
 
+.creditLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.creditLink:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: breakpoints.$s) {
     .mobile {
         text-align: center;
