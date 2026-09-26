@@ -36,31 +36,52 @@ export const HomeHero = () => {
   const [videoError, setVideoError] = useState(false);
   const [activeSlideId, setActiveSlideId] = useState<string | null>(null);
 
+  const prepareVideoForInlinePlayback = useCallback((video: HTMLVideoElement) => {
+    // Set both the properties and attributes. Older iOS Safari versions inspect the
+    // attributes before React has finished hydrating the element.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+  }, []);
+
+  const playVideo = useCallback(async () => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return;
+    }
+
+    prepareVideoForInlinePlayback(video);
+    setIsMuted(true);
+
+    try {
+      await video.play();
+      setNeedsPlayback(false);
+      setVideoError(false);
+    } catch {
+      setNeedsPlayback(true);
+    }
+  }, [prepareVideoForInlinePlayback]);
+
   useEffect(() => {
-    const playVideo = () => {
-      const video = videoRef.current;
-
-      if (!video) {
-        return;
+    const resumeVisibleVideo = () => {
+      if (document.visibilityState === "visible") {
+        void playVideo();
       }
-
-      video.muted = true;
-      setIsMuted(true);
-      video
-        .play()
-        .then(() => setNeedsPlayback(false))
-        .catch(() => setNeedsPlayback(true));
     };
 
-    playVideo();
-    window.addEventListener("load", playVideo);
+    void playVideo();
     window.addEventListener("pageshow", playVideo);
+    document.addEventListener("visibilitychange", resumeVisibleVideo);
 
     return () => {
-      window.removeEventListener("load", playVideo);
       window.removeEventListener("pageshow", playVideo);
+      document.removeEventListener("visibilitychange", resumeVisibleVideo);
     };
-  }, []);
+  }, [playVideo]);
 
   const resetTextCycle = useCallback(() => {
     previousVideoTimeRef.current = 0;
@@ -116,20 +137,29 @@ export const HomeHero = () => {
     setIsMuted(nextMuted);
   };
 
-  const startPlayback = () => {
+  const startPlayback = async () => {
     const video = videoRef.current;
 
     if (!video) {
       return;
     }
 
-    video
-      .play()
-      .then(() => {
-        setNeedsPlayback(false);
-        setVideoError(false);
-      })
-      .catch(() => setVideoError(true));
+    prepareVideoForInlinePlayback(video);
+
+    // A media element that entered an error state needs to be loaded again;
+    // calling play() alone keeps rejecting on Safari.
+    if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
+      video.load();
+    }
+
+    try {
+      await video.play();
+      setNeedsPlayback(false);
+      setVideoError(false);
+    } catch {
+      setVideoError(true);
+      setNeedsPlayback(true);
+    }
   };
 
   return (
@@ -138,13 +168,13 @@ export const HomeHero = () => {
         <video
           ref={videoRef}
           className={styles.video}
-          src="/hero_no_text.mp4"
           poster="/hero-poster.jpg"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
+          onLoadedMetadata={() => void playVideo()}
           onCanPlay={() => setVideoError(false)}
           onError={() => {
             setVideoError(true);
@@ -158,6 +188,7 @@ export const HomeHero = () => {
           }}
           onSeeked={resetTextCycle}
         >
+          <source src="/hero_no_text.mp4" type="video/mp4" />
           <track
             kind="captions"
             src="/hero-captions.vtt"
