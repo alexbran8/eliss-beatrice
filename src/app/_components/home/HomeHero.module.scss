@@ -101,6 +101,15 @@
   box-shadow: var(--shadow-xl);
 }
 
+.playbackFallback {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.28);
+}
+
 @media (max-width: 768px) {
   .hero,
   .videoReveal {

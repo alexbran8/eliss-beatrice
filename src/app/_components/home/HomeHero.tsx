@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton, RevealFx } from "@once-ui-system/core";
+import { Button, IconButton, RevealFx } from "@once-ui-system/core";
 import { useLocale } from "next-intl";
 import { type CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
@@ -32,32 +32,56 @@ export const HomeHero = () => {
   const activeSlideRef = useRef<string | null>(null);
   const previousVideoTimeRef = useRef(0);
   const [isMuted, setIsMuted] = useState(true);
+  const [needsPlayback, setNeedsPlayback] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const [activeSlideId, setActiveSlideId] = useState<string | null>(null);
 
+  const prepareVideoForInlinePlayback = useCallback((video: HTMLVideoElement) => {
+    // Set both the properties and attributes. Older iOS Safari versions inspect the
+    // attributes before React has finished hydrating the element.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+  }, []);
+
+  const playVideo = useCallback(async () => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return;
+    }
+
+    prepareVideoForInlinePlayback(video);
+    setIsMuted(true);
+
+    try {
+      await video.play();
+      setNeedsPlayback(false);
+      setVideoError(false);
+    } catch {
+      setNeedsPlayback(true);
+    }
+  }, [prepareVideoForInlinePlayback]);
+
   useEffect(() => {
-    const playVideo = () => {
-      const video = videoRef.current;
-
-      if (!video) {
-        return;
+    const resumeVisibleVideo = () => {
+      if (document.visibilityState === "visible") {
+        void playVideo();
       }
-
-      video.muted = true;
-      setIsMuted(true);
-      video.play().catch(() => {
-        // Browsers may still block autoplay in low-power or data-saver modes.
-      });
     };
 
-    playVideo();
-    window.addEventListener("load", playVideo);
+    void playVideo();
     window.addEventListener("pageshow", playVideo);
+    document.addEventListener("visibilitychange", resumeVisibleVideo);
 
     return () => {
-      window.removeEventListener("load", playVideo);
       window.removeEventListener("pageshow", playVideo);
+      document.removeEventListener("visibilitychange", resumeVisibleVideo);
     };
-  }, []);
+  }, [playVideo]);
 
   const resetTextCycle = useCallback(() => {
     previousVideoTimeRef.current = 0;
@@ -113,22 +137,59 @@ export const HomeHero = () => {
     setIsMuted(nextMuted);
   };
 
+  const startPlayback = async () => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return;
+    }
+
+    prepareVideoForInlinePlayback(video);
+
+    // A media element that entered an error state needs to be loaded again;
+    // calling play() alone keeps rejecting on Safari.
+    if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
+      video.load();
+    }
+
+    try {
+      await video.play();
+      setNeedsPlayback(false);
+      setVideoError(false);
+    } catch {
+      setVideoError(true);
+      setNeedsPlayback(true);
+    }
+  };
+
   return (
     <section className={styles.hero} aria-label="Hero video">
       <RevealFx fillWidth className={styles.videoReveal}>
         <video
           ref={videoRef}
           className={styles.video}
-          src="/hero_no_text.mp4"
+          poster="/hero-poster.jpg"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          onLoadedMetadata={() => void playVideo()}
+          onCanPlay={() => setVideoError(false)}
+          onError={() => {
+            setVideoError(true);
+            setNeedsPlayback(true);
+          }}
           onEnded={resetTextCycle}
-          onPlaying={resetTextCycle}
+          onPlaying={() => {
+            resetTextCycle();
+            setNeedsPlayback(false);
+            setVideoError(false);
+          }}
           onSeeked={resetTextCycle}
         >
+          <source src="/hero_no_text_desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+          <source src="/hero_no_text.mp4" type="video/mp4" />
           <track
             kind="captions"
             src="/hero-captions.vtt"
@@ -150,7 +211,20 @@ export const HomeHero = () => {
             </p>
           ))}
         </div>
-        <div className={styles.muteControl}>
+        {(needsPlayback || videoError) && (
+          <div className={styles.playbackFallback}>
+            <Button
+              variant="primary"
+              size="l"
+              prefixIcon="play"
+              onClick={startPlayback}
+              aria-label={localized.pages.home.video.play}
+            >
+              {videoError ? localized.pages.home.video.retry : localized.pages.home.video.play}
+            </Button>
+          </div>
+        )}
+        <div className={styles.muteControl} hidden={needsPlayback || videoError}>
           <IconButton
             icon={isMuted ? "volumeOff" : "volumeOn"}
             variant="secondary"

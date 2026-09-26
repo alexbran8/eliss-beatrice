@@ -15,6 +15,10 @@
         "light": ["It ends with texture and feelings."],
         "felt": ["Art made to be felt.", "Not merely seen."]
       },
+      "video": {
+        "play": "Play video",
+        "retry": "Try video again"
+      },
       "collaborators": {
         "title": "Collaborators",
         "description": "Creative partners, studios, and institutions connected to the work.",

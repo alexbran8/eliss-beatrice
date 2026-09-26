@@ -15,6 +15,10 @@
         "light": ["Termina con textura y sensaciones."],
         "felt": ["Arte hecho para sentirse.", "No solo para verse."]
       },
+      "video": {
+        "play": "Reproducir vídeo",
+        "retry": "Volver a intentar"
+      },
       "collaborators": {
         "title": "Colaboradores",
         "description": "Aliados creativos, estudios e instituciones conectadas con la obra.",
