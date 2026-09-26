@@ -53,11 +53,13 @@ export default async function Home() {
       <AboutIntroSection about={about} showAboutLink={routes["/about"]} />
       {routes["/blog"] && <BlogPreviewSection title="Latest from the blog" />}
       <FeaturedProjectsSection title={work.label} />
-      <CollaboratorsSection
-        title={home.collaborators.title}
-        description={home.collaborators.description}
-        logosLabel={home.collaborators.logosLabel}
-      />
+      {features.collaborators && (
+        <CollaboratorsSection
+          title={home.collaborators.title}
+          description={home.collaborators.description}
+          logosLabel={home.collaborators.logosLabel}
+        />
+      )}
       {features.contact && (
         <ContactSection label={contactLabel} description={contactDescription} person={person} />
       )}
