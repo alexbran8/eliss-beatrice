@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton, RevealFx } from "@once-ui-system/core";
+import { Button, IconButton, RevealFx } from "@once-ui-system/core";
 import { useLocale } from "next-intl";
 import { type CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
@@ -32,6 +32,8 @@ export const HomeHero = () => {
   const activeSlideRef = useRef<string | null>(null);
   const previousVideoTimeRef = useRef(0);
   const [isMuted, setIsMuted] = useState(true);
+  const [needsPlayback, setNeedsPlayback] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const [activeSlideId, setActiveSlideId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -44,9 +46,10 @@ export const HomeHero = () => {
 
       video.muted = true;
       setIsMuted(true);
-      video.play().catch(() => {
-        // Browsers may still block autoplay in low-power or data-saver modes.
-      });
+      video
+        .play()
+        .then(() => setNeedsPlayback(false))
+        .catch(() => setNeedsPlayback(true));
     };
 
     playVideo();
@@ -113,6 +116,22 @@ export const HomeHero = () => {
     setIsMuted(nextMuted);
   };
 
+  const startPlayback = () => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return;
+    }
+
+    video
+      .play()
+      .then(() => {
+        setNeedsPlayback(false);
+        setVideoError(false);
+      })
+      .catch(() => setVideoError(true));
+  };
+
   return (
     <section className={styles.hero} aria-label="Hero video">
       <RevealFx fillWidth className={styles.videoReveal}>
@@ -120,13 +139,23 @@ export const HomeHero = () => {
           ref={videoRef}
           className={styles.video}
           src="/hero_no_text.mp4"
+          poster="/hero-poster.jpg"
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          onCanPlay={() => setVideoError(false)}
+          onError={() => {
+            setVideoError(true);
+            setNeedsPlayback(true);
+          }}
           onEnded={resetTextCycle}
-          onPlaying={resetTextCycle}
+          onPlaying={() => {
+            resetTextCycle();
+            setNeedsPlayback(false);
+            setVideoError(false);
+          }}
           onSeeked={resetTextCycle}
         >
           <track
@@ -150,7 +179,20 @@ export const HomeHero = () => {
             </p>
           ))}
         </div>
-        <div className={styles.muteControl}>
+        {(needsPlayback || videoError) && (
+          <div className={styles.playbackFallback}>
+            <Button
+              variant="primary"
+              size="l"
+              prefixIcon="play"
+              onClick={startPlayback}
+              aria-label={localized.pages.home.video.play}
+            >
+              {videoError ? localized.pages.home.video.retry : localized.pages.home.video.play}
+            </Button>
+          </div>
+        )}
+        <div className={styles.muteControl} hidden={needsPlayback || videoError}>
           <IconButton
             icon={isMuted ? "volumeOff" : "volumeOn"}
             variant="secondary"
