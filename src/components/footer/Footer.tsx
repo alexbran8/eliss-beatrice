@@ -28,11 +28,16 @@ export const Footer = () => {
         }}
       >
         <Text className={styles.textStack} variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">© {currentYear}</Text>
-          <Text>{person.name}</Text>
-          <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-          </Text>
+          <Text onBackground="neutral-weak">© {currentYear}</Text> <Text>{person.name}</Text>{" "}
+          <Text onBackground="neutral-weak">by</Text>{" "}
+          <a
+            className={styles.creditLink}
+            href="https://webservices.ro"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            webservices.ro
+          </a>
         </Text>
         <Row
           className={styles.iconStack}
