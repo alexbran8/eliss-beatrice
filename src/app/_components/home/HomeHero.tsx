@@ -188,6 +188,7 @@ export const HomeHero = () => {
           }}
           onSeeked={resetTextCycle}
         >
+          <source src="/hero_no_text_desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
           <source src="/hero_no_text.mp4" type="video/mp4" />
           <track
             kind="captions"
