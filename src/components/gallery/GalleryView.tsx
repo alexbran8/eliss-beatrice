@@ -8,7 +8,10 @@ import styles from "./GalleryView.module.scss";
 function getImageTitle(image: (typeof gallery.images)[number], index: number) {
   if (image.title) return image.title;
 
-  const filename = image.src.split("/").pop()?.replace(/\.[^.]+$/, "");
+  const filename = image.src
+    .split("/")
+    .pop()
+    ?.replace(/\.[^.]+$/, "");
   if (!filename) return `Artwork ${index + 1}`;
 
   return filename.replace(/[_-]+/g, " ");
@@ -119,18 +122,6 @@ export default function GalleryView() {
             />
           </div>
 
-          <IconButton
-            className={styles.previous}
-            icon="chevronLeft"
-            tooltip="Previous image"
-            variant="secondary"
-            onClick={(event: MouseEvent<HTMLButtonElement>) => {
-              event.stopPropagation();
-              showPreviousImage();
-            }}
-            aria-label="Previous gallery image"
-          />
-
           <div className={styles.stage} onClick={(event) => event.stopPropagation()}>
             <img
               key={activeImage.src}
@@ -140,17 +131,28 @@ export default function GalleryView() {
             />
           </div>
 
-          <IconButton
-            className={styles.next}
-            icon="chevronRight"
-            tooltip="Next image"
-            variant="secondary"
-            onClick={(event: MouseEvent<HTMLButtonElement>) => {
-              event.stopPropagation();
-              showNextImage();
-            }}
-            aria-label="Next gallery image"
-          />
+          <div className={styles.navigation}>
+            <IconButton
+              icon="chevronLeft"
+              tooltip="Previous image"
+              variant="secondary"
+              onClick={(event: MouseEvent<HTMLButtonElement>) => {
+                event.stopPropagation();
+                showPreviousImage();
+              }}
+              aria-label="Previous gallery image"
+            />
+            <IconButton
+              icon="chevronRight"
+              tooltip="Next image"
+              variant="secondary"
+              onClick={(event: MouseEvent<HTMLButtonElement>) => {
+                event.stopPropagation();
+                showNextImage();
+              }}
+              aria-label="Next gallery image"
+            />
+          </div>
         </div>
       )}
     </>
