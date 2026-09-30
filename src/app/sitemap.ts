@@ -1,5 +1,5 @@
-import { getPosts } from "@/utils/utils";
 import { baseURL, paintings, routes as routesConfig } from "@/resources";
+import { getPosts } from "@/utils/utils";
 
 export default async function sitemap() {
   const blogs = routesConfig["/blog"]
@@ -25,7 +25,6 @@ export default async function sitemap() {
 
   const routes = activeRoutes.map((route) => ({
     url: `${baseURL}${route !== "/" ? route : ""}`,
-    lastModified: new Date().toISOString().split("T")[0],
   }));
 
   return [...routes, ...blogs, ...works, ...paintingRoutes];

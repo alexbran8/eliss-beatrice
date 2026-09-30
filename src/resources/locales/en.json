@@ -1,13 +1,14 @@
 {
   "site": {
-    "title": "Eliss Beatrice's Portfolio",
-    "description": "Portfolio website showcasing my work as an artist"
+    "title": "Eliss Beatrice | Contemporary Artist & Original Paintings",
+    "description": "Explore original paintings and visual work by Eliss Beatrice, a contemporary artist working with emotion, color, texture and atmosphere."
   },
   "pages": {
     "home": {
       "label": "Home",
-      "headline": "Building expressive worlds through art",
-      "subline": "I'm Eliss Beatrice, an artist exploring image, emotion, and atmosphere through visual storytelling.",
+      "headline": "Contemporary art shaped by emotion, color and atmosphere",
+      "subline": "I'm Eliss Beatrice, a contemporary artist creating original paintings through layered color, texture and visual storytelling.",
+      "heroLabel": "Featured artwork and studio film",
       "featuredLabel": "Featured work",
       "heroSlides": {
         "begins": ["It begins with glass."],
@@ -17,8 +18,13 @@
       },
       "video": {
         "play": "Play video",
-        "retry": "Try video again"
+        "retry": "Try video again",
+        "mute": "Mute video",
+        "unmute": "Unmute video"
       },
+      "blogPreviewTitle": "Latest from the blog",
+      "contactLabel": "Contact",
+      "contactDescription": "For available works, commissions, or studio conversations, you can write directly.",
       "collaborators": {
         "title": "Collaborators",
         "description": "Creative partners, studios, and institutions connected to the work.",

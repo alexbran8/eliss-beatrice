@@ -1,4 +1,4 @@
-import {
+import type {
   DataStyleConfig,
   DisplayConfig,
   EffectsConfig,
@@ -11,9 +11,9 @@ import {
   SocialSharingConfig,
   StyleConfig,
 } from "@/types";
-import metadata from "./metadata.json";
-import en from "./locales/en.json";
 import { features } from "./features";
+import en from "./locales/en.json";
+import metadata from "./metadata.json";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = metadata.site.url;
@@ -197,9 +197,9 @@ const schema: SchemaConfig = {
 
 // social links
 const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  threads: "",
+  linkedin: "",
+  discord: "",
 };
 
 // social sharing configuration for blog posts
