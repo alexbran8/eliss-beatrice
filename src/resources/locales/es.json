@@ -1,13 +1,14 @@
 {
   "site": {
-    "title": "Portafolio de Eliss Beatrice",
-    "description": "Sitio web de portafolio que presenta mi trabajo como artista"
+    "title": "Eliss Beatrice | Artista contemporánea y pinturas originales",
+    "description": "Descubre pinturas originales y obra visual de Eliss Beatrice, artista contemporánea que explora emoción, color, textura y atmósfera."
   },
   "pages": {
     "home": {
       "label": "Inicio",
-      "headline": "Construyendo mundos expresivos a través del arte",
-      "subline": "Soy Eliss Beatrice, una artista que explora imagen, emoción y atmósfera a través de la narrativa visual.",
+      "headline": "Arte contemporáneo inspirado por emoción, color y atmósfera",
+      "subline": "Soy Eliss Beatrice, una artista contemporánea que crea pinturas originales mediante capas de color, textura y narrativa visual.",
+      "heroLabel": "Obra destacada y vídeo de estudio",
       "featuredLabel": "Obra destacada",
       "heroSlides": {
         "begins": ["Empieza con vidrio."],
@@ -17,8 +18,13 @@
       },
       "video": {
         "play": "Reproducir vídeo",
-        "retry": "Volver a intentar"
+        "retry": "Volver a intentar",
+        "mute": "Silenciar vídeo",
+        "unmute": "Activar sonido del vídeo"
       },
+      "blogPreviewTitle": "Últimas publicaciones",
+      "contactLabel": "Contacto",
+      "contactDescription": "Para consultas sobre obras disponibles, encargos o conversaciones de estudio, puedes escribir directamente.",
       "collaborators": {
         "title": "Colaboradores",
         "description": "Aliados creativos, estudios e instituciones conectadas con la obra.",

@@ -163,7 +163,7 @@ export const HomeHero = () => {
   };
 
   return (
-    <section className={styles.hero} aria-label="Hero video">
+    <section className={styles.hero} aria-label={localized.pages.home.heroLabel}>
       <RevealFx fillWidth className={styles.videoReveal}>
         <video
           ref={videoRef}
@@ -229,10 +229,12 @@ export const HomeHero = () => {
             icon={isMuted ? "volumeOff" : "volumeOn"}
             variant="secondary"
             size="l"
-            tooltip={isMuted ? "Unmute video" : "Mute video"}
+            tooltip={isMuted ? localized.pages.home.video.unmute : localized.pages.home.video.mute}
             tooltipPosition="left"
             onClick={toggleMute}
-            aria-label={isMuted ? "Unmute video" : "Mute video"}
+            aria-label={
+              isMuted ? localized.pages.home.video.unmute : localized.pages.home.video.mute
+            }
           />
         </div>
       </RevealFx>
